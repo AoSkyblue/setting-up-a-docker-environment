@@ -1,2 +1,31 @@
-name: auto-deploy
+name: Deploy to VPS
 
+on:
+  push:
+    branches: [ "main" ] # mainブランチへのプッシュで発火
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Execute remote ssh commands using password
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USER }}
+          key: ${{ secrets.VPS_SSH_KEY }}
+          port: 22
+          script: |
+            # プロジェクトのフォルダに移動
+            cd ${{ secrets.PROJECT_PATH }}
+            
+            # 最新コードを取得
+            git pull origin main
+            
+            # Dockerイメージのビルドとコンテナの再起動
+            # (-d: バックグラウンド, --build: 変更があればビルドし直す)
+            docker-compose up -d --build
+            
+            # (オプション) Laravelのキャッシュクリアやマイグレーション
+            docker-compose exec -T app php artisan optimize:clear
+            docker-compose exec -T app php artisan migrate --force

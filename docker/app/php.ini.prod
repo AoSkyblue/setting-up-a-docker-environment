@@ -25,20 +25,20 @@ zend.assertions = -1
 mbstring.language = Japanese
 
 [opcache]
-# opcasheするとソースコードのキャッシュ、最適化して高速化が見込める
-# ソースコードを変更してもサーバーを再起動しないと変更が反映されない
+; opcasheするとソースコードのキャッシュ、最適化して高速化が見込める
+; ソースコードを変更してもサーバーを再起動しないと変更が反映されない
 opcache.enable = 1
-# opcacheによって使用されるメモリ量（MB）
+; opcacheによって使用されるメモリ量（MB）
 opcache.memory_consumption = 128
-#インターンされた文字列用のメモリ量（MB）
+;インターンされた文字列用のメモリ量（MB）
 opcache.interned_strings_buffer = 8
-#opchacheのハッシュテーブルのサイズ
+;opchacheのハッシュテーブルのサイズ
 opcache.max_accelerated_files = 4000
-#有効にするとスクリプトが更新されたかopcache.revalidate_timestamps秒の間隔で確認
+;有効にするとスクリプトが更新されたかopcache.revalidate_timestamps秒の間隔で確認
 opcache.validate_timestamps = 0
-# PHPコード(textセグメント)をHUGE PAGEにコピーするかどうかの設定
+; PHPコード(textセグメント)をHUGE PAGEにコピーするかどうかの設定
 opcache.huge_code_pages = 0
-# プリロードするスクリプトのパス
+; プリロードするスクリプトのパス
 opcache.preload = /var/www/preload.php
-# プリロードスクリプトを実行するユーザー
+; プリロードスクリプトを実行するユーザー
 opcache.preload_user = www-data

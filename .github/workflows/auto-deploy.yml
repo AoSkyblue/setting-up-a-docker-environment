@@ -21,8 +21,12 @@ jobs:
             cd ${{ secrets.PROJECT_PATH }}
             
             # 最新コードを取得
-            git pull
+            git pull origin main
             
             # Dockerイメージのビルドとコンテナの再起動
             # (-d: バックグラウンド, --build: 変更があればビルドし直す)
             docker compose up -d --build
+            
+            # (オプション) Laravelのキャッシュクリアやマイグレーション
+            # docker compose exec -T app php artisan optimize:clear
+            # docker compose exec -T app php artisan migrate --force

@@ -32,6 +32,7 @@ jobs:
             MYSQL_PASSWORD=${{ secrets.MYSQL_PASSWORD }}
             MYSQL_ROOT_PASSWORD=${{ secrets.MYSQL_ROOT_PASSWORD }}
             TZ=${{ secrets.TZ }}
+            DOMAIN=${{ secrets.DOMAIN }}
             EOF
             
             # Dockerイメージのビルドとコンテナの再起動

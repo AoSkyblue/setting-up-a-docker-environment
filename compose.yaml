@@ -18,6 +18,8 @@ services:
       - 443:443
     depends_on:
       - app #webサービスはappサービスに依存
+    environment:
+      - DOMAIN=${DOMAIN}
     volumes:
       - ./src/:/app #ホストのsrcディレクトリをコンテナの/appにバインドマウント
       - certs-data:/etc/letsencrypt
@@ -40,6 +42,8 @@ services:
 
   certbot:
     image: certbot/certbot
+    environment:
+      - DOMAIN=${DOMAIN}
     volumes:
       - certs-data:/etc/letsencrypt
       - certbot-webroot:/var/www/certbot

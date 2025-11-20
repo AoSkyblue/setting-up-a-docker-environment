@@ -1,7 +1,7 @@
 #!/bin/sh
 
-# ドメイン設定
-DOMAIN="aoshima-vps.tr-kdev.com"
+# ドメイン設定（必須: 環境変数から取得、未設定ならエラー）
+DOMAIN="${DOMAIN:?ERROR: DOMAIN environment variable is not set}"
 WEBROOT="/var/www/certbot"
 TRIGGER_FILE="/var/www/certbot/nginx_reload_trigger"
 

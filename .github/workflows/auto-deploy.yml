@@ -3,6 +3,8 @@ name: Deploy to VPS
 on:
     push:
         branches: [ "main" ] # mainブランチへのプッシュで発火
+    #ボタンプッシュで発火
+    workflow_dispatch:
 
 jobs:
   deploy:

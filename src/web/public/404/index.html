@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found</title>
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --text-color: #f8fafc;
+            --accent-color: #ef4444;
+            --glass-bg: rgba(255, 255, 255, 0.03);
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --glow-color: #ef4444;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Glitch Effect for 404 */
+        .glitch-wrapper {
+            position: relative;
+            margin-bottom: 2rem;
+        }
+
+        .glitch {
+            font-size: 8rem;
+            font-weight: 900;
+            line-height: 1;
+            position: relative;
+            color: #fff;
+            letter-spacing: -0.05em;
+        }
+
+        .glitch::before,
+        .glitch::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .glitch::before {
+            left: 2px;
+            text-shadow: -2px 0 #ff00c1;
+            clip: rect(44px, 450px, 56px, 0);
+            animation: glitch-anim 5s infinite linear alternate-reverse;
+        }
+
+        .glitch::after {
+            left: -2px;
+            text-shadow: -2px 0 #00fff9;
+            clip: rect(44px, 450px, 56px, 0);
+            animation: glitch-anim2 5s infinite linear alternate-reverse;
+        }
+
+        @keyframes glitch-anim {
+            0% {
+                clip: rect(30px, 9999px, 10px, 0);
+            }
+
+            5% {
+                clip: rect(80px, 9999px, 90px, 0);
+            }
+
+            10% {
+                clip: rect(10px, 9999px, 30px, 0);
+            }
+
+            15% {
+                clip: rect(50px, 9999px, 20px, 0);
+            }
+
+            20% {
+                clip: rect(60px, 9999px, 40px, 0);
+            }
+
+            25% {
+                clip: rect(90px, 9999px, 10px, 0);
+            }
+
+            30% {
+                clip: rect(20px, 9999px, 70px, 0);
+            }
+
+            35% {
+                clip: rect(40px, 9999px, 60px, 0);
+            }
+
+            40% {
+                clip: rect(10px, 9999px, 50px, 0);
+            }
+
+            45% {
+                clip: rect(70px, 9999px, 20px, 0);
+            }
+
+            50% {
+                clip: rect(30px, 9999px, 90px, 0);
+            }
+
+            55% {
+                clip: rect(60px, 9999px, 10px, 0);
+            }
+
+            60% {
+                clip: rect(20px, 9999px, 40px, 0);
+            }
+
+            65% {
+                clip: rect(80px, 9999px, 30px, 0);
+            }
+
+            70% {
+                clip: rect(10px, 9999px, 60px, 0);
+            }
+
+            75% {
+                clip: rect(50px, 9999px, 20px, 0);
+            }
+
+            80% {
+                clip: rect(90px, 9999px, 10px, 0);
+            }
+
+            85% {
+                clip: rect(30px, 9999px, 70px, 0);
+            }
+
+            90% {
+                clip: rect(60px, 9999px, 40px, 0);
+            }
+
+            95% {
+                clip: rect(20px, 9999px, 80px, 0);
+            }
+
+            100% {
+                clip: rect(40px, 9999px, 10px, 0);
+            }
+        }
+
+        @keyframes glitch-anim2 {
+            0% {
+                clip: rect(60px, 9999px, 10px, 0);
+            }
+
+            5% {
+                clip: rect(20px, 9999px, 40px, 0);
+            }
+
+            10% {
+                clip: rect(80px, 9999px, 30px, 0);
+            }
+
+            15% {
+                clip: rect(10px, 9999px, 60px, 0);
+            }
+
+            20% {
+                clip: rect(50px, 9999px, 20px, 0);
+            }
+
+            25% {
+                clip: rect(90px, 9999px, 10px, 0);
+            }
+
+            30% {
+                clip: rect(30px, 9999px, 70px, 0);
+            }
+
+            35% {
+                clip: rect(60px, 9999px, 40px, 0);
+            }
+
+            40% {
+                clip: rect(20px, 9999px, 80px, 0);
+            }
+
+            45% {
+                clip: rect(40px, 9999px, 10px, 0);
+            }
+
+            50% {
+                clip: rect(70px, 9999px, 20px, 0);
+            }
+
+            55% {
+                clip: rect(30px, 9999px, 90px, 0);
+            }
+
+            60% {
+                clip: rect(10px, 9999px, 50px, 0);
+            }
+
+            65% {
+                clip: rect(50px, 9999px, 20px, 0);
+            }
+
+            70% {
+                clip: rect(90px, 9999px, 10px, 0);
+            }
+
+            75% {
+                clip: rect(20px, 9999px, 60px, 0);
+            }
+
+            80% {
+                clip: rect(60px, 9999px, 30px, 0);
+            }
+
+            85% {
+                clip: rect(10px, 9999px, 80px, 0);
+            }
+
+            90% {
+                clip: rect(40px, 9999px, 10px, 0);
+            }
+
+            95% {
+                clip: rect(70px, 9999px, 20px, 0);
+            }
+
+            100% {
+                clip: rect(30px, 9999px, 50px, 0);
+            }
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+
+        p {
+            color: #94a3b8;
+            margin-bottom: 2.5rem;
+            text-align: center;
+            max-width: 400px;
+            line-height: 1.6;
+        }
+
+        .btn {
+            padding: 0.8rem 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: 1px solid var(--glass-border);
+        }
+
+        .btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        /* Ambient Glow */
+        .glow {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(239, 68, 68, 0.15), transparent 70%);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+            pointer-events: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="glow"></div>
+
+    <div class="glitch-wrapper">
+        <div class="glitch" data-text="404">404</div>
+    </div>
+
+    <h2>Page Not Found</h2>
+    <p>お探しのページは見つかりませんでした。<br>URLが間違っているか、ページが移動した可能性があります。</p>
+
+    <a href="/" class="btn">Back to Home</a>
+</body>
+
+</html>

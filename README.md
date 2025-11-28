@@ -46,6 +46,7 @@ docker compose up -d --build
 # 環境変数一覧
 以下内容の.envファイルを各自設定してください
 
+```
 APP_ENV = (本番環境)production / (開発環境)local
 DOMAIN = yourdomain.com
 MYSQL_DATABASE = yourdatabase
@@ -53,3 +54,4 @@ MYSQL_USER = youruser
 MYSQL_PASSWORD = yourpassword
 MYSQL_ROOT_PASSWORD = yourrootpassword
 TZ = Asia/Tokyo
+```
